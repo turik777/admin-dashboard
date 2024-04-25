@@ -7,6 +7,11 @@
 body,
 html {
     height: 100%;
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+img {
+    width: 2em;
 }
 
 .container {
@@ -16,10 +21,64 @@ html {
 }
 
 .header {
-    padding: 1em;
-    row-gap: 2em;
+    padding: 1em 4em;
+    gap: 2em;
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 2fr 1fr;
+}
+
+.search-bar {
+    grid-template-columns: auto minmax(0, 1fr);
+}
+
+.search-bar input {
+    height: 3em;
+    border: none;
+    border-radius: 2em;
+    background-color: #FEE2E2;
+    outline: none;
+    padding: 1em;
+}
+
+.user > img + img {
+    width: 4em;
+    border-radius: 50%;
+}
+
+.user p {
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.user-info {
+    row-gap: 0.5em;
+}
+
+.user-info img {
+    width: 6em;
+    border-radius: 50%;
+}
+
+.user-info > p:first-of-type {
+    font-size: 1.2em;
+    font-weight: 700;
+    align-content: end;
+}
+
+.user-info > p + p {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+button {
+    border: none;
+    background-color: #EF4444;
+    padding: 1rem 3rem;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 1.2em;
+    border-radius: 2em;
+    cursor: pointer;
 }
 
 .sidebar {
@@ -32,7 +91,7 @@ html {
 }
 
 .main {
-    background-color: #FEF2F2;
+    background-color: #FEE2E2;
     display: grid;
     grid-template-columns: 3fr 1fr;
     padding: 1em;
@@ -48,4 +107,42 @@ html {
 
 .projects > p {
     grid-column: 1 / -1;
+}
+
+.search-bar,
+.user,
+.buttons,
+.logo,
+.nav li,
+.nav-other li {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: stretch;
+    align-items: center;
+    column-gap: 2em;
+}
+
+.logo,
+.nav li,
+.nav-other li {
+    justify-content: start;
+}
+
+.user-info,
+.profile {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-auto-rows: max-content;
+    align-content: center;
+    column-gap: 2em;
+}
+
+.user,
+.buttons {
+    justify-content: end;
+}
+
+.user-info img,
+.profile img {
+    grid-row: span 2;
 }
